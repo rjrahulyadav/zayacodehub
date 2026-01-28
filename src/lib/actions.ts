@@ -1,41 +1,11 @@
 "use server";
 
-import { z } from "zod";
-import { cookies } from "next/headers";
-import { redirect } from "next/navigation";
-
 // Mock data, in a real app this would be a database
 import { projects, jobs } from "./data";
 import type { Project, Job } from "./definitions";
 
 // In a real app, you'd want to revalidate paths after data mutation
 // import { revalidatePath } from 'next/cache';
-
-const FormSchema = z.object({
-  password: z.string(),
-});
-
-export async function login(prevState: { error: string | undefined } | undefined, formData: FormData) {
-  const parsed = FormSchema.safeParse(Object.fromEntries(formData.entries()));
-
-  if (!parsed.success) {
-    return { error: "Invalid form data." };
-  }
-  
-  // In a real app, you would hash and compare the password against a stored hash
-  if (parsed.data.password === "admin123") {
-    const expires = new Date(Date.now() + 24 * 60 * 60 * 1000 * 7); // 7 days
-    cookies().set("session", "loggedIn", { expires, httpOnly: true });
-    redirect("/admin");
-  }
-
-  return { error: "Invalid password." };
-}
-
-export async function logout() {
-  cookies().delete("session");
-  redirect("/admin/login");
-}
 
 
 // --- Mock Data Management ---
