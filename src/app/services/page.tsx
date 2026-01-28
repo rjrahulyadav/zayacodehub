@@ -39,7 +39,7 @@ export default function ServicesPage() {
                     <CardTitle className="text-2xl font-headline font-semibold text-white">{service.title}</CardTitle>
                   </CardHeader>
                   <CardContent className="flex-grow">
-                    <p className="text-muted-foreground">{service.description}</p>
+                    <p className="text-foreground/80">{service.description}</p>
                   </CardContent>
                 </Card>
               );

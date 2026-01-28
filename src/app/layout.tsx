@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { Toaster } from "@/components/ui/toaster";
 import { FirebaseClientProvider } from '@/firebase/client-provider';
-import { CursorGlow } from '@/components/cursor-glow';
 
 export const metadata: Metadata = {
   title: {
@@ -35,7 +34,6 @@ export default function RootLayout({
         )}
       >
         <FirebaseClientProvider>
-          <CursorGlow />
           <div className="relative flex min-h-dvh flex-col bg-background">
             <Header />
             <main className="flex-1">{children}</main>

@@ -65,7 +65,7 @@ export default function PortfolioPage() {
                 </div>
                 <CardContent className="p-6">
                   <h3 className="text-xl font-bold font-headline mb-2 text-white">{project.name}</h3>
-                  <p className="text-muted-foreground text-sm mb-4 h-20 overflow-hidden">{project.description}</p>
+                  <p className="text-foreground/80 text-sm mb-4 h-20 overflow-hidden">{project.description}</p>
                   <div className="mb-4">
                     <h4 className="text-sm font-semibold mb-2 text-gray-300">Technologies Used:</h4>
                     <div className="flex flex-wrap gap-2">

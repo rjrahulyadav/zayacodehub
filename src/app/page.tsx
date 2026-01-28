@@ -69,7 +69,7 @@ export default function Home() {
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-muted-foreground mb-4">{service.description.substring(0, 100)}...</p>
+                    <p className="text-foreground/80 mb-4">{service.description.substring(0, 100)}...</p>
                     <Link href="/services" className="flex items-center text-accent font-semibold group-hover:text-glow-accent">
                       Learn More <ArrowRight className="ml-2 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                     </Link>

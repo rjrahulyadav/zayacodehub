@@ -14,7 +14,7 @@ body {
     --card-foreground: 0 0% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 3.9%;
-    --primary: 267 100% 50%;
+    --primary: 320 100% 60%;
     --primary-foreground: 0 0% 98%;
     --secondary: 0 0% 96.1%;
     --secondary-foreground: 0 0% 9%;
@@ -26,7 +26,7 @@ body {
     --destructive-foreground: 0 0% 98%;
     --border: 0 0% 89.8%;
     --input: 0 0% 89.8%;
-    --ring: 267 100% 50%;
+    --ring: 320 100% 60%;
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
@@ -43,14 +43,14 @@ body {
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
   .dark {
-    --background: 240 10% 10%;
+    --background: 240 10% 4%;
     --foreground: 210 20% 90%;
-    --card: 240 10% 15%;
+    --card: 240 10% 10%;
     --card-foreground: 210 20% 90%;
     --popover: 240 10% 5%;
     --popover-foreground: 210 20% 90%;
-    --primary: 280 90% 70%;
-    --primary-foreground: 280 100% 98%;
+    --primary: 320 100% 60%;
+    --primary-foreground: 320 100% 98%;
     --secondary: 240 10% 25%;
     --secondary-foreground: 210 20% 90%;
     --muted: 240 10% 25%;
@@ -59,9 +59,9 @@ body {
     --accent-foreground: 180 100% 10%;
     --destructive: 0 70% 50%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 10% 30%;
-    --input: 240 10% 30%;
-    --ring: 280 90% 75%;
+    --border: 240 10% 20%;
+    --input: 240 10% 20%;
+    --ring: 320 90% 65%;
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;
@@ -89,7 +89,7 @@ body {
 
 @layer utilities {
   .glassmorphism {
-    @apply bg-card/10 backdrop-blur-md border border-primary/20;
+    @apply bg-card/30 backdrop-blur-md border border-primary/20;
   }
 
   .text-glow-primary {
@@ -142,21 +142,5 @@ body {
     0%{background-position:0% 50%}
     50%{background-position:100% 50%}
     100%{background-position:0% 50%}
-  }
-
-  .cursor-glow {
-    position: fixed;
-    width: 500px;
-    height: 500px;
-    border-radius: 50%;
-    background: radial-gradient(circle, hsl(var(--primary) / 0.08) 0%, transparent 70%);
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    z-index: 999;
-    transition: opacity 0.3s;
-    opacity: 0;
-  }
-  body:hover .cursor-glow {
-    opacity: 1;
   }
 }
