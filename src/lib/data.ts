@@ -15,12 +15,20 @@ export const services: Service[] = [
     description: 'We design and develop native and cross-platform mobile applications for iOS and Android. Our apps offer intuitive user experiences and robust functionality to keep your users engaged.',
   },
   {
-    title: 'IT Consulting',
-    description: 'Leverage our expertise to solve your toughest technology challenges. We provide strategic guidance on IT infrastructure, cloud adoption, cybersecurity, and digital transformation.',
+    title: 'AI & Machine Learning',
+    description: 'Unlock the power of data with our AI and ML solutions. We build intelligent systems that automate processes, provide predictive insights, and create personalized user experiences.',
   },
   {
-    title: 'Digital Solutions',
-    description: 'We offer a suite of digital solutions including UI/UX design, cloud services, and DevOps to help you innovate faster and stay ahead of the competition. Streamline your operations with our expertise.',
+    title: 'IoT & Embedded Systems',
+    description: 'Connect your hardware to the cloud with our IoT and embedded systems expertise. We develop smart, connected products from prototype to production for various industries.',
+  },
+  {
+    title: 'Cloud & DevOps Engineering',
+    description: 'Accelerate your development lifecycle and ensure scalability with our Cloud and DevOps services. We architect robust cloud infrastructure and implement CI/CD pipelines for efficient deployments.',
+  },
+  {
+    title: 'IT Consulting',
+    description: 'Leverage our expertise to solve your toughest technology challenges. We provide strategic guidance on IT infrastructure, cloud adoption, cybersecurity, and digital transformation.',
   },
 ];
 

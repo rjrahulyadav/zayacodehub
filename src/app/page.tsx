@@ -3,15 +3,17 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { services } from '@/lib/data';
-import { ArrowRight, Code, Monitor, Smartphone, Briefcase, BarChart } from 'lucide-react';
+import { ArrowRight, Code, Monitor, Smartphone, Cpu, Share2, Cloud, Briefcase } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const serviceIcons: { [key: string]: React.ElementType } = {
   'Custom Software Development': Code,
   'Web Development': Monitor,
   'Mobile App Development': Smartphone,
+  'AI & Machine Learning': Cpu,
+  'IoT & Embedded Systems': Share2,
+  'Cloud & DevOps Engineering': Cloud,
   'IT Consulting': Briefcase,
-  'Digital Solutions': BarChart,
 };
 
 export default function Home() {

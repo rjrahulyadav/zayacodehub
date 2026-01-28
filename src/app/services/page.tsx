@@ -1,14 +1,16 @@
 import { PageHeader } from '@/components/page-header';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { services } from '@/lib/data';
-import { Code, Monitor, Smartphone, Briefcase, BarChart, Settings } from 'lucide-react';
+import { Code, Monitor, Smartphone, Briefcase, Cpu, Share2, Cloud, Settings } from 'lucide-react';
 
 const serviceIcons: { [key: string]: React.ElementType } = {
   'Custom Software Development': Code,
   'Web Development': Monitor,
   'Mobile App Development': Smartphone,
+  'AI & Machine Learning': Cpu,
+  'IoT & Embedded Systems': Share2,
+  'Cloud & DevOps Engineering': Cloud,
   'IT Consulting': Briefcase,
-  'Digital Solutions': BarChart,
 };
 
 export default function ServicesPage() {
