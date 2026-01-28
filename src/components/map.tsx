@@ -88,10 +88,13 @@ export function Map() {
   const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
   const position = { lat: 11.6643, lng: 78.1460 }; // Salem, Tamil Nadu coordinates
 
-  if (!apiKey) {
+  if (!apiKey || apiKey === 'YOUR_API_KEY_HERE') {
     return (
-      <div className="w-full h-full bg-muted flex items-center justify-center">
-        <p className="text-muted-foreground">Google Maps API key is missing.</p>
+      <div className="w-full h-full bg-muted flex items-center justify-center text-center p-4">
+        <p className="text-muted-foreground">
+          Google Maps API key is missing or is a placeholder. <br />
+          Please add your key to the <code className="bg-muted-foreground/20 p-1 rounded">.env.local</code> file.
+        </p>
       </div>
     );
   }
