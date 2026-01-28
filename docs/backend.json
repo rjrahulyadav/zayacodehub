@@ -1,0 +1,194 @@
+{
+  "entities": {
+    "Project": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Project",
+      "type": "object",
+      "description": "Represents a portfolio project showcased on the website.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the project."
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the project."
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of the project."
+        },
+        "technologies": {
+          "type": "array",
+          "description": "List of technologies used in the project.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "imageUrls": {
+          "type": "array",
+          "description": "URLs of screenshots or images for the project.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "liveLink": {
+          "type": "string",
+          "description": "URL of the live project or demo (optional).",
+          "format": "uri"
+        },
+        "category": {
+          "type": "string",
+          "description": "Category of the project (e.g., Web, Mobile, Software)."
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "description",
+        "technologies",
+        "imageUrls",
+        "category"
+      ]
+    },
+    "HiringPost": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "HiringPost",
+      "type": "object",
+      "description": "Represents a job opening (fresher or internship) posted by the admin.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the hiring post."
+        },
+        "roleTitle": {
+          "type": "string",
+          "description": "Title of the job role."
+        },
+        "jobType": {
+          "type": "string",
+          "description": "Type of job (Fresher or Intern)."
+        },
+        "skillsRequired": {
+          "type": "array",
+          "description": "List of skills required for the job.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "location": {
+          "type": "string",
+          "description": "Location of the job (or Remote)."
+        },
+        "applyLink": {
+          "type": "string",
+          "description": "Link or email address for applying to the job.",
+          "format": "uri"
+        }
+      },
+      "required": [
+        "id",
+        "roleTitle",
+        "jobType",
+        "skillsRequired",
+        "location",
+        "applyLink"
+      ]
+    },
+    "AdminUser": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "AdminUser",
+      "type": "object",
+      "description": "Represents an admin user who can manage the website content.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the admin user."
+        },
+        "email": {
+          "type": "string",
+          "description": "Email address of the admin user, zayacodehub@gmail.com.",
+          "format": "email"
+        },
+        "hashedPassword": {
+          "type": "string",
+          "description": "Hashed password of the admin user. Store using a secure hashing algorithm."
+        },
+        "firstName": {
+          "type": "string",
+          "description": "First Name of the admin."
+        },
+        "lastName": {
+          "type": "string",
+          "description": "Last Name of the admin."
+        }
+      },
+      "required": [
+        "id",
+        "email",
+        "hashedPassword",
+        "firstName",
+        "lastName"
+      ]
+    }
+  },
+  "auth": {
+    "providers": [
+      "password",
+      "anonymous"
+    ]
+  },
+  "firestore": {
+    "structure": [
+      {
+        "path": "/projects/{projectId}",
+        "definition": {
+          "entityName": "Project",
+          "schema": {
+            "$ref": "#/backend/entities/Project"
+          },
+          "description": "Stores portfolio projects showcased on the website. Includes a unique project ID.",
+          "params": [
+            {
+              "name": "projectId",
+              "description": "Unique identifier for the project."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/hiring_posts/{hiringPostId}",
+        "definition": {
+          "entityName": "HiringPost",
+          "schema": {
+            "$ref": "#/backend/entities/HiringPost"
+          },
+          "description": "Stores job openings (fresher or intern) posted by the admin. Includes a unique hiring post ID.",
+          "params": [
+            {
+              "name": "hiringPostId",
+              "description": "Unique identifier for the hiring post."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/roles_admin/{adminId}",
+        "definition": {
+          "entityName": "AdminUser",
+          "schema": {
+            "$ref": "#/backend/entities/AdminUser"
+          },
+          "description": "Indicates admin user privileges based on document existence. The email of the admin user must be zayacodehub@gmail.com.",
+          "params": [
+            {
+              "name": "adminId",
+              "description": "Unique identifier for the admin user."
+            }
+          ]
+        }
+      }
+    ],
+    "reasoning": "The Firestore structure is designed to support the ZAYA CODE HUB website, emphasizing security, scalability, and maintainability. It incorporates the principles of Authorization Independence, Structural Segregation, and Access Modeling.\n\n*   **Authorization Independence:** Achieved through denormalization. For example, if hiring post access depended on an admin user, the relevant admin role or identifier would be copied into the hiring post document itself, avoiding `get()` calls in security rules.\n*   **Structural Segregation:** Different types of data with varying access requirements are stored in separate collections. Publicly accessible project data is stored separately from admin-controlled hiring posts.\n*   **Access Modeling:**\n    *   Admin user data is stored using Path-Based ownership under `/roles_admin/{uid}`, indicating administrative privileges based on document existence.\n\nThis structure supports QAPs by:\n\n*   Securely listing projects: Since projects are public, listing them is straightforward.\n*   Securely listing hiring posts: The rules ensure that only admin users can modify hiring posts, while all users can view them.\n\nThe design prioritizes simplicity and clarity in security rules, avoiding complex hierarchies and `get()` calls to ensure robust and debuggable authorization logic."
+  }
+}
