@@ -29,7 +29,7 @@ export default function ServicesPage() {
               return (
                 <Card 
                   key={service.title} 
-                  className="glassmorphism group flex flex-col overflow-hidden transition-all duration-300 hover:border-accent hover:shadow-2xl hover:shadow-accent/20 hover:-translate-y-2"
+                  className="glassmorphism moving-border group flex flex-col overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
                   <CardHeader>

@@ -61,7 +61,7 @@ export default function Home() {
             {services.slice(0, 3).map((service) => {
               const Icon = serviceIcons[service.title] || Code;
               return (
-                <Card key={service.title} className="glassmorphism group overflow-hidden transition-all duration-300 hover:border-accent hover:shadow-2xl hover:shadow-accent/20">
+                <Card key={service.title} className="glassmorphism group overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-primary/20 moving-border">
                   <CardHeader>
                     <div className="flex items-center gap-4">
                       <Icon className="w-10 h-10 text-accent transition-all duration-300 group-hover:scale-110 group-hover:text-glow-accent" />
