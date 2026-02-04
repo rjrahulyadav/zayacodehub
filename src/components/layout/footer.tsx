@@ -46,13 +46,13 @@ export function Footer() {
             <div>
               <h3 className="font-semibold font-headline mb-4 text-white">Contact Us</h3>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>Subramania Nagar</li>
+                <li>Suramangalam</li>
                 <li>Salem, Tamil Nadu – 636005</li>
                 <li className="pt-2">
                     <a href="tel:7033399183" className="hover:text-primary">Phone: 7033399183</a>
                 </li>
                 <li>
-                    <a href="mailto:info@zayacodehub.com" className="hover:text-primary">info@zayacodehub.com</a>
+                    <a href="mailto:info@zayacodehub.com" className="hover:text-primary">zayacodehub@gmail.com</a>
                 </li>
               </ul>
             </div>
