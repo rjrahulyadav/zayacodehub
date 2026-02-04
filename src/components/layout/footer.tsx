@@ -25,9 +25,9 @@ export function Footer() {
               Innovating the future, one line of code at a time.
             </p>
             <div className="flex space-x-4 mt-4">
-              <Link href="#" className="text-muted-foreground hover:text-primary"><Github size={20} /></Link>
-              <Link href="#" className="text-muted-foreground hover:text-primary"><Linkedin size={20} /></Link>
-              <Link href="#" className="text-muted-foreground hover:text-primary"><Twitter size={20} /></Link>
+              <Link href="https://github.com/rjrahulyadav" className="text-muted-foreground hover:text-primary"><Github size={20} /></Link>
+              <Link href="https://in.linkedin.com/in/rahul-kumar-yadav-909a95320" className="text-muted-foreground hover:text-primary"><Linkedin size={20} /></Link>
+              <Link href="https://www.instagram.com/rjrahulyadav54/" className="text-muted-foreground hover:text-primary"><Instagram size={20} /></Link>
             </div>
           </div>
           <div className="md:col-span-3 grid grid-cols-2 md:grid-cols-3 gap-8">
