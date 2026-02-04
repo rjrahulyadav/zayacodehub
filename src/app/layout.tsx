@@ -8,7 +8,7 @@ import { FirebaseClientProvider } from '@/firebase/client-provider';
 
 export const metadata: Metadata = {
   title: {
-    default: 'ZAYA CODE HUB: Neon Edge',
+    default: 'ZAYA CODE HUB: IT COMPANY',
     template: '%s | ZAYA CODE HUB',
   },
   description: 'ZAYA CODE HUB is a professional software and IT services company specializing in custom software development, web and mobile app development, IT consulting, and digital solutions for businesses of all sizes.',
