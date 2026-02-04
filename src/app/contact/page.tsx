@@ -59,7 +59,7 @@ export default function ContactPage() {
                     <Mail className="h-6 w-6 text-accent mt-1" />
                     <div>
                       <span className="font-semibold text-gray-300">Email</span>
-                      <p><a href="mailto:contact@zayacodehub.com" className="hover:text-primary">contact@zayacodehub.com</a></p>
+                      <p><a href="mailto:contact@zayacodehub.com" className="hover:text-primary">zayacodehub@gmail.com</a></p>
                     </div>
                   </div>
                 </div>
